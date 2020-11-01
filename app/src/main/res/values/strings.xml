@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ejemplos Apartado 8</string>
+    <string name="foto_de_t_o_feo">Foto de tío feo</string>
+    <string name="gafas">Gafas</string>
+    <string name="barba_y_sombrerp_o">Barba y sombrerp¡o</string>
+    <string name="poner">Poner</string>
+    <string name="quitar">Quitar</string>
+</resources>
