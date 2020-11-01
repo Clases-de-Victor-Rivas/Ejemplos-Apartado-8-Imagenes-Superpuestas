@@ -46,7 +46,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginBottom="50dp"
-        android:onClick="bt_quitar_poner_click"
+        android:onClick="bt_poner_click"
         android:text="@string/poner" />
 
     <Button
