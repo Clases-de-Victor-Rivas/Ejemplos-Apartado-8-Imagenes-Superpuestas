@@ -5,4 +5,7 @@
     <string name="barba_y_sombrerp_o">Barba y sombrerp¡o</string>
     <string name="poner">Poner</string>
     <string name="quitar">Quitar</string>
+    <string name="poner_imagen">PONER IMAGEN</string>
+    <string name="quitar_imagen">QUITAR IMAGEN</string>
+    <string name="reiniciar_imagen">REINICIAR IMAGEN</string>
 </resources>

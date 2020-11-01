@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="poner_imagen">PONER IMAGEN</string>
+    <string name="quitar_imagen">QUITAR IMAGEN</string>
+    <string name="reiniciar_imagen">REINICIAR IMAGEN</string>
+</resources>
