@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         // Modifico las propiedades de los botones existentes
         bt_poner.setText( getString(R.string.poner_imagen))
-        bt_quitar.text=getString(R.string.quitar_imagen)
+        bt_quitar.text="QUITAR IMAGEN"
 
         // Creo un nuevo botón programáticamente
         val params = FrameLayout.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT )
@@ -31,18 +31,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         params.gravity=Gravity.BOTTOM+ Gravity.START
         params.bottomMargin=20
         params.leftMargin=350
-
         bt_reiniciar.text=getString(R.string.reiniciar_imagen)
-        bt_reiniciar.id= 1_001 // LE asigno un id cualquiera
-        Log.d("VICTOR", "el id es "+bt_reiniciar.id)
-
+        bt_reiniciar.setOnClickListener(this)
         addContentView(bt_reiniciar, params)
 
-        bt_poner.setOnClickListener(this)
-        bt_quitar.setOnClickListener(this)
-        bt_reiniciar.setOnClickListener(this)
     }
-
     // Opción 1: Usamos un callback para cada botón
     @Suppress( "UNUSED_PARAMETER")
     fun bt_poner_click(view: View?){
@@ -61,9 +54,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     // Opción 2: Usamos un solo callback para todos los botones, identificando cuál ha sido pulsado
     fun bt_quitar_poner_click(view: View?){
-        when( view?.id ) {
-            R.id.bt_quitar -> viendo_imagen-=if (viendo_imagen>0) 1 else 0
-            R.id.bt_poner -> viendo_imagen+=if (viendo_imagen<2) 1 else 0
+        when( view ) {
+            bt_quitar -> viendo_imagen-=if (viendo_imagen>0) 1 else 0
+            bt_poner -> viendo_imagen+=if (viendo_imagen<2) 1 else 0
+            bt_reiniciar -> viendo_imagen=0
         }
         im_gafas.visibility=if (viendo_imagen>0) View.VISIBLE else View.INVISIBLE
         im_barba.visibility=if (viendo_imagen>1) View.VISIBLE else View.INVISIBLE
@@ -71,11 +65,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     // Opción 3: La actividad implementa los métodos de la interfaz View.OnClickListener
     override fun onClick(view: View?) {
-        when( view?.id ) {
-            bt_quitar.id -> viendo_imagen-=if (viendo_imagen>0) 1 else 0
-            bt_poner.id -> viendo_imagen+=if (viendo_imagen<2) 1 else 0
-            bt_reiniciar.id -> viendo_imagen=0
+        when( view ) {
+            bt_quitar -> viendo_imagen-=if (viendo_imagen>0) 1 else 0
+            bt_poner -> viendo_imagen+=if (viendo_imagen<2) 1 else 0
+            bt_reiniciar -> viendo_imagen=0
         }
+
         im_gafas.visibility=if (viendo_imagen>0) View.VISIBLE else View.INVISIBLE
         im_barba.visibility=if (viendo_imagen>1) View.VISIBLE else View.INVISIBLE
     }
